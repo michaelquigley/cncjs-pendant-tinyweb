@@ -350,6 +350,17 @@ $('[data-route="workspace"] [data-name="btn-close"]').on('click', function() {
     controller.closePort();
 });
 
+cnc.reConnect = function() {
+    if(cnc.controllerType && cnc.port && cnc.baudrate) {
+        controller.openPort(cnc.port, {
+            controllerType: cnc.controllerType,
+            baudrate: Number(cnc.baudrate)
+        });
+        return true;
+    }
+    return false;
+}
+
 //
 // Connection
 //

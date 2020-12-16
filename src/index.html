@@ -379,7 +379,7 @@ $('document').ready(function() {
             if (root.cnc.connected) {
                 window.location = '#/workspace';
             } else {
-                window.location = '#/connection';
+                window.location = cnc.reConnect() ? '#/axes' : '#/connection';
             }
         },
         '/workspace': function() {
